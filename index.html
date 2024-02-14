@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="p2.jpg">
+    <title>EV Charging Stations</title>
+</head>
+
+<body>
+  
+  <header>
+    <div class="header-content">
+        <h1>EV Charging Stations Map</h1>
+    </div>
+</header>
+
+    <main>
+        <section id="map">
+          <section id="map"></section>
+
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+<script>
+  var map = L.map('map').setView([51.505, -0.09], 13);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  function onLocationFound(e) {
+    var radius = e.accuracy / 2;
+    L.marker(e.latlng).addTo(map)
+      .bindPopup("You are here within " + radius + " meters.").openPopup();
+    L.circle(e.latlng, radius).addTo(map);
+  }
+
+  map.on('locationfound', onLocationFound);
+
+  map.locate({setView: true, maxZoom: 16});
+</script>
+        </section>
+
+        <section id="filters">
+            <h2>Filters</h2>
+            <div class="filter-group">
+                <label for="connectorType">Connector Type:</label>
+                <select id="connectorType">
+                    <option value="all">All</option>
+                    <option value="type2">Type 2</option>
+                    <option value="css">CSS</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="chargingSpeed">Charging Speed:</label>
+                <select id="chargingSpeed">
+                    <option value="all">All</option>
+                    <option value="fast">Fast</option>
+                    <option value="medium">Medium</option>
+                    <option value="slow">Slow</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+              <label for="location">Locations</label>
+              <select id="location">
+                  <option value="">Select Location</option>
+                  <option value="mumbai">Mumbai</option>
+                  <option value="delhi">Delhi</option>
+                  <option value="chennai">Chennai</option>
+                  <option value="kolkata">Kolkata</option>
+              </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="rating">Rating</label>
+            <select id="rating">
+                <option value="select_ratings">Select Ratings</option>
+                <option value="mumbai">5 Stars</option>
+                <option value="delhi">4 Stars</option>
+                <option value="chennai">3 Stars</option>
+            </select>
+        </div>
+
+            <button id="searchButton">Search</button>
+            <script>
+              document.getElementById('searchButton').onclick = function() {
+                var connectorType = document.getElementById('connectorType').value;
+                var chargingSpeed = document.getElementById('chargingSpeed').value;
+                var location = document.getElementById('location').value;
+
+                if (connectorType === 'all' && chargingSpeed === 'all' && !location) {
+                  alert('Please select at least one filter.');
+                  return false;
+                }
+
+                if (location) {
+                  window.location.href = location + ".html";
+                } else {
+                  window.location.href = "3rd.html";
+                }
+              }
+
+            </script>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 EV Charging Stations App</p>
+    </footer>
+
+</body>
+</html>

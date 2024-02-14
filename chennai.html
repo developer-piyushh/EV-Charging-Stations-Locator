@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="vsiewport" content="width=device-width, initial-scale=1.0">
+  <title>Charging Stations</title>
+  <link rel="stylesheet" href="chennai.css">
+  <link rel="icon" type="image/png" href="p2.jpg">
+
+</head>
+<body>
+  <header>
+  <h1 id="heading">Chennai EV Charging Stations</h1>
+</header>
+  <div id="results">
+    <button class="station-button">Charging Station 1 - 37, Uthamar Gandhi Rd, Tirumurthy Nagar, Nungambakkam, Chennai, Tamil Nadu 600034</button>
+    <button class="station-button">Charging Station 2 - First Floor, RTBI, E Block, IITM RESEARCH PARK, Kanagam Rd, Kanagam, Tharamani, Chennai, Tamil Nadu 600113</button>
+    <button class="station-button">Charging Station 1 - 79, Southern Ave, Industrial Estate, Ambattur, Chennai, Tamil Nadu 600037</button>
+  </div>
+  <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1C1FJnFiHBUYdJF7iIpRNwGNHPMGNvu4&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
+  <br>
+  <button id="backButton" style="font-size: 150%;">Back</button>
+  <script>
+    document.getElementById('backButton').onclick = function() {
+        window.history.back();
+    }
+</script>
+
+  <footer>
+    <p>&copy; 2024 EV Charging Stations App</p>
+  </footer>
+</body>
+</html>

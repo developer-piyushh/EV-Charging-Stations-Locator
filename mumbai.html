@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charging Stations</title>
+  <link rel="stylesheet" href="mumbai.css">
+  <link rel="icon" type="image/png" href="p2.jpg">
+
+</head>
+<body>
+  <header>
+  <h1 id="heading">Mumbai EV Charging Stations</h1>
+</header>
+  <div id="results">
+    <button class="station-button">Charging Station 1 - Chhatrapati Shivaji Maharaj International Airport, Maharashtra 400099</button>
+    <button class="station-button">Charging Station 2 - Mahim - Sion Link Rd, Naya Nagar, Police Colony, Mahim, Mumbai, Maharashtra 400016</button>
+    <button class="station-button">Charging Station 3 - Namdev Koli Marg, Sion, Mumbai, Maharashtra 400022</button>
+  </div>
+  <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1iFmropxkeMivlw5TkJVsSw_UR5sYljM&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
+  <br>
+  <button id="backButton" style="font-size: 150%;">Back</button>
+  <script>
+    document.getElementById('backButton').onclick = function() {
+        window.history.back();
+    }
+</script>
+
+  <footer>
+    <p>&copy; 2024 EV Charging Stations App</p>
+  </footer>
+</body>
+</html>
