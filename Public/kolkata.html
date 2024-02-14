@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charging Stations</title>
+  <link rel="stylesheet" href="kolkata.css">
+  <link rel="icon" type="image/png" href="p2.jpg">
+
+</head>
+<body>
+  <header>
+  <h1 id="heading">Kolkata EV Charging Stations</h1>
+</header>
+  <div id="results">
+    <button class="station-button">Charging Station 1 - 43, Jawaharlal Nehru Rd, Kankaria Estates, Park Street area, Kolkata, West Bengal 700071</button>
+    <button class="station-button">Charging Station 2 - 707, Jadu Colony, Sarada Pally, Kolkata, West Bengal 700034</button>
+    <button class="station-button">Charging Station 1 - P/122, James Long Sarani, Benjamin Bangalee, Majhi Para Rd, West Bengal 700063</button>
+  </div>
+  <iframe src="https://www.google.com/maps/d/u/0/embed?mid=16ZDIZjfeZz3MDjEnj_CUiv437fZzDSA&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
+  <br>
+  <button id="backButton" style="font-size: 150%;">Back</button>
+  <script>
+    document.getElementById('backButton').onclick = function() {
+        window.history.back();
+    }
+</script>
+
+  <footer>
+    <p>&copy; 2024 EV Charging Stations App</p>
+  </footer>
+</body>
+</html>
